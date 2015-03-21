@@ -5,7 +5,9 @@ shortCircuitOR :: Bool -> Bool -> Bool
 shortCircuitOR a b = if a then a else b
 
 
--- Exe: shortCircuitOR True False
+-- Ex: shortCircuitOR True False
+-- True
+-- Ex²: shortCircuitOR True (length [1..] > 0) 
 -- True
 
 -- Explicação:
