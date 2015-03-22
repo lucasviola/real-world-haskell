@@ -21,5 +21,15 @@ type BookRecord = (BookInfo, BookReview)
 data BetterReview = BetterReview BookInfo CustomerID ReviewBody
 					deriving (Show)
 
+type CardHolder = String
+type CardNumber = String
+type Address = [String]
+
+data BillingInfo = CreditCard CardNumber CardHolder Address
+				 | CashOnDelivery
+				 | Invoice CustomerID
+				   deriving (Show, Eq)
+
+
 -- Construindo dados
 novoLivro = Book 1 "Haskell for dummies" ["Lucas", "Mel"]
