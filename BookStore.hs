@@ -13,10 +13,13 @@ data BookReview = BookReview BookInfo CustomerID String
 				  deriving (Show)
 
 -- Type Synonyms: Usados para descrever melhor um determinado Tipo.
+-- Deixa o código mais legível
 type CustomerID = Int
 type ReviewBody = String
+type BookRecord = (BookInfo, BookReview)
 
 data BetterReview = BetterReview BookInfo CustomerID ReviewBody
+					deriving (Show)
 
 -- Construindo dados
 novoLivro = Book 1 "Haskell for dummies" ["Lucas", "Mel"]
