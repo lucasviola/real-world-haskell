@@ -19,10 +19,19 @@ bookAuthors (Book id title authors) = authors
 firstAuthor :: BookInfo -> String
 firstAuthor (Book id title authors) = head authors
 
--- Wild Card Pattern
+-- Wild Card Pattern: Mais seguro e correto de usar, pois não cria
+-- variáveis que não serão bindadas
 nicerID (Book id _ _) = id
 nicerTitle (Book _ title _) = title
 nicerAuthors (Book _ _ authors) = authors
+
+-- Usando Record Syntax Template: Elimina o boilerplate de ter que ficar
+-- pattern matching com cada field - O Construtor já cria função pra cada field
+data Customer = Customer {
+		customerID :: CustomerID
+	  , customerName :: String
+	  , customerAddress :: Address
+} deriving (Show, Eq)
 
 
 data MagazineInfo = Magazine Int String [String]
