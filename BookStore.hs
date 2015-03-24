@@ -7,9 +7,16 @@ novoLivro = Book 1 "Haskell for dummies" ["Lucas", "Mel"]
 bibliaDoCapiroto = Book 2 "Biblia do Capiroto" ["Lukita Satanista"]
 
 -- Pattern Matching
+bookID :: BookInfo -> Int
 bookID (Book id title authors) = id
+
+bookTitle :: BookInfo -> String
 bookTitle (Book id title authors) = title
+
+bookAuthors ::  BookInfo -> [String]
 bookAuthors (Book id title authors) = authors
+
+firstAuthor :: BookInfo -> String
 firstAuthor (Book id title authors) = head authors
 
 data MagazineInfo = Magazine Int String [String]
