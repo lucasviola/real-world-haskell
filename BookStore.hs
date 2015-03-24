@@ -4,6 +4,13 @@ data BookInfo = Book Int String [String]
 
 -- Construindo dados
 novoLivro = Book 1 "Haskell for dummies" ["Lucas", "Mel"]
+bibliaDoCapiroto = Book 2 "Biblia do Capiroto" ["Lukita Satanista"]
+
+-- Pattern Matching
+bookID (Book id title authors) = id
+bookTitle (Book id title authors) = title
+bookAuthors (Book id title authors) = authors
+firstAuthor (Book id title authors) = head authors
 
 data MagazineInfo = Magazine Int String [String]
 					deriving (Show, Eq)
