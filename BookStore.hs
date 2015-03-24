@@ -19,6 +19,12 @@ bookAuthors (Book id title authors) = authors
 firstAuthor :: BookInfo -> String
 firstAuthor (Book id title authors) = head authors
 
+-- Wild Card Pattern
+nicerID (Book id _ _) = id
+nicerTitle (Book _ title _) = title
+nicerAuthors (Book _ _ authors) = authors
+
+
 data MagazineInfo = Magazine Int String [String]
 					deriving (Show, Eq)
 
