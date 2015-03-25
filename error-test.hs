@@ -13,3 +13,8 @@ sndSafe [] = Nothing
 sndSafe xs = if null (tail xs)
 				then Nothing
 				else Just (head (tail xs))
+
+-- Usando Wild Card Pattern
+sndPretty :: [a] -> Maybe a
+sndPretty (_:x:_) = Just x
+sndPretty _ = Nothing
