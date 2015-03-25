@@ -12,3 +12,10 @@ lend' amount balance = if amount < reserve * 0.5
                        else Nothing
     where reserve    = 100
           newBalance = balance - amount
+
+-- Definindo funções locais
+pluralise :: String -> [Int] -> [String]
+pluralise word counts = map plural counts
+    where plural 0 = "no " ++ word ++ "s"
+          plural 1 = "one " ++ word
+          plural n = show n ++ " " ++ word ++ "s"
